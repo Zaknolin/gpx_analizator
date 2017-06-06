@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>782</width>
+    <height>502</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>8</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>GPX Анализатор</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="leftVerticalLayout">
+          <item>
+           <widget class="QLabel" name="driveDurationLabel">
+            <property name="text">
+             <string>Время в движении: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="distanceLabel">
+            <property name="text">
+             <string>Длинна пути: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="minSpeedLabel">
+            <property name="text">
+             <string>Минимальная скорость: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="maxSpeedLabel">
+            <property name="text">
+             <string>Максимальная скорость: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="averageSpeedLabel">
+            <property name="text">
+             <string>Средняя скорость: 0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="rightVerticalLayout">
+          <item>
+           <widget class="QLabel" name="overSpeedDurationLabel">
+            <property name="text">
+             <string>Время с первышением скорости: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="overSpeedCountLabel">
+            <property name="text">
+             <string>Кол-во превышения скорости: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="idleDurationLabel">
+            <property name="text">
+             <string>Время стоянок: 0</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="idleCountLabel">
+            <property name="text">
+             <string>Кол-во стоянок: 0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="buttonsLayout">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item>
+         <widget class="QPushButton" name="loadButton">
+          <property name="text">
+           <string>Загрузить GPX</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveButton">
+          <property name="text">
+           <string>Сохранить график</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="closeButton">
+          <property name="text">
+           <string>Закрыть</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Лимит скорости:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="speedLimitEdit">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="inputMethodHints">
+             <set>Qt::ImhNone</set>
+            </property>
+            <property name="text">
+             <string>105</string>
+            </property>
+            <property name="maxLength">
+             <number>3</number>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="graphlLayout">
+      <property name="spacing">
+       <number>7</number>
+      </property>
+     </layout>
+    </item>
+    <item>
+     <widget class="QScrollBar" name="horizontalScrollBar">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>1</number>
+      </property>
+      <property name="pageStep">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>529</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>611</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
